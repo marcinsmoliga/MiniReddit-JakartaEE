@@ -16,7 +16,7 @@ import com.example.MiniReddit.config.DataSourceProvider;
 public class DiscoveryDao {
 	private final DataSource dataSource;
 
-	public DiscoveryDao(DataSource dataSource) {
+	public DiscoveryDao() {
 		try {
 			this.dataSource = DataSourceProvider.getDataSource();
 		} catch (NamingException e) {
