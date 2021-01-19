@@ -143,3 +143,9 @@ a{
 .downvote:hover {
     color: #FF3B30;
 }
+
+/* max column width 1200px and centering */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
