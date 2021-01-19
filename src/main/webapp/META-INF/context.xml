@@ -1,0 +1,9 @@
+<Context>
+    <Resource name="jdbc/readstack"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              type="javax.sql.DataSource"
+              username="root"
+              password="admin"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/minireddit?serverTimezone=UTC"/>
+</Context>
