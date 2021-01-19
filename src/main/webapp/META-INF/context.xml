@@ -1,5 +1,5 @@
 <Context>
-    <Resource name="jdbc/readstack"
+    <Resource name="jdbc/minireddit"
               factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
               type="javax.sql.DataSource"
               username="root"
