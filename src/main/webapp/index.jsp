@@ -32,7 +32,18 @@
             <p class="discovery-details">Added by John, Date:21/01/2021</p>
             <a href="#" class="discovery-link">https://www.example.com</a>
             <p>Test Paragraph in article block</p>
+
+            <section class="discovery-bar">
+                <a href="#" class="discovery-link upvote">
+                    <i class="fas fa-arrow-alt-circle-up discovery-upvote"></i>
+                </a>
+                <p class="discovery-votes">32</p>
+                <a href="#" class="discovery-link downvote">
+                    <i class="fas fa-arrow-alt-circle-down discovery-downvote"></i>
+                </a>
+            </section>
         </article>
     </main>
+    <footer>MiniReddit, developed by example.com</footer>
 </body>
 </html>

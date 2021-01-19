@@ -4,6 +4,11 @@ body {
     font-weight: 300;
 }
 
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
 /* getting rid of underline links */
 a{
     text-decoration: none;
@@ -109,4 +114,32 @@ a{
 .discovery-link:visited {
     color: #007AFF;
     word-wrap: break-word;
+}
+
+/* alignment and larger font */
+.discovery-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+/* replacing a paragraph with a linear element */
+.discovery-votes {
+    display: inline;
+    color: #007AFF;
+}
+
+/* overwrite default margins */
+.discovery-bar > p {
+    margin: 0 4px;
+}
+
+/* change the color of voting buttons on hover */
+.upvote:hover {
+    color: #4CD964;
+}
+
+.downvote:hover {
+    color: #FF3B30;
 }
