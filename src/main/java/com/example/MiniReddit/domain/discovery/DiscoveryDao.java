@@ -27,7 +27,7 @@ public class DiscoveryDao {
 	public List<Discovery> findAll() {
 		final String query = """
 				SELECT
-					id, title, url description, date_added, category_id
+					id, title, url, description, date_added, category_id
 				FROM
 					discovery d
 				""";
