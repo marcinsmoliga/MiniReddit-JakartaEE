@@ -1,0 +1,8 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<nav class="navbar">
+    <a href="${pageContext.request.contextPath}" class="logo">
+        <i class="fas fa-share-alt-square"></i>
+        MiniReddit
+    </a>
+    <a href="#" class="login-button">SignIn</a>
+</nav>
