@@ -45,13 +45,13 @@ public class DiscoveryDao {
 		}
 	}
 
-	private static Discovery mapRow(ResultSet set) throws SQLException {
-		int discoveryId = set.getInt("id");
-		String title = set.getString("title");
-		String url = set.getString("url");
-		String description = set.getString("description");
-		LocalDateTime dateAdded = set.getTimestamp("date_added").toLocalDateTime();
-		int categoryId = set.getInt("category_id");
+	private static Discovery mapRow(ResultSet resultSett) throws SQLException {
+		int discoveryId = resultSett.getInt("id");
+		String title = resultSett.getString("title");
+		String url = resultSett.getString("url");
+		String description = resultSett.getString("description");
+		LocalDateTime dateAdded = resultSett.getTimestamp("date_added").toLocalDateTime();
+		int categoryId = resultSett.getInt("category_id");
 		return new Discovery(discoveryId, title, url,description, dateAdded, categoryId);
 	}
 }
