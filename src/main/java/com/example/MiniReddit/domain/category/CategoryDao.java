@@ -64,7 +64,7 @@ public class CategoryDao {
 				PreparedStatement statement = connection.prepareStatement(query)
 		) {
 			statement.setInt(1, categoryId);
-			ResultSet resultSet = statement.executeQuery(query);
+			ResultSet resultSet = statement.executeQuery();
 
 			if (resultSet.next()) {
 				Category category = mapRow(resultSet);
@@ -75,7 +75,6 @@ public class CategoryDao {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-
 	}
 
 	private static Category mapRow(ResultSet resultSet) throws SQLException {

@@ -4,41 +4,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>MiniReddit</title>
     <meta charset="UTF-8">
+    <title>${requestScope.category.name} - MiniReddit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/main.css">
 </head>
 <body>
 <div class="container">
     <nav class="navbar">
-        <a href="#" class="logo">
+        <a href="${pageContext.request.contextPath}" class="logo">
             <i class="fas fa-share-alt-square"></i>
             MiniReddit
         </a>
         <a href="#" class="login-button">SignIn</a>
     </nav>
 
-    <aside class="categories">
-        <ul>
-            <c:forEach var="category" items="${requestScope.categories}">
-                <li><a href="${pageContext.request.contextPath.concat('/category?id=').concat(category.id)}">${category.name}</a></li>
-            </c:forEach>
-        </ul>
-    </aside>
-
     <main>
+        <h1>${requestScope.category.name}</h1>
+        <p>${requestScope.category.description}</p>
         <c:forEach var="discovery" items="${requestScope.discoveries}">
             <article class="discovery">
                 <h2 class="discovery-header"><c:out value="${discovery.title}"/></h2>
-                <p class="discovery-details">Added by John, ${discovery.dateAdded.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"))}</p>
-                <a href="<c:out value="${discovery.url}"/>" target="_blank" class="discovery-link"><c:out
-                        value="${discovery.url}"/></a>
+                <p class="discovery-details">Added by: Jhon, ${discovery.dateAdded.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"))}</p>
+                <a href="<c:out value="${discovery.url}"/>" target="_blank" class="discovery-link"><c:out value="${discovery.url}"/></a>
                 <p><c:out value="${discovery.description}"/></p>
-
                 <section class="discovery-bar">
                     <a href="#" class="discovery-link upvote">
                         <i class="fas fa-arrow-alt-circle-up discovery-upvote"></i>
@@ -48,11 +39,10 @@
                         <i class="fas fa-arrow-alt-circle-down discovery-downvote"></i>
                     </a>
                 </section>
-
             </article>
         </c:forEach>
     </main>
-    <footer>MiniReddit, developed by example.com</footer>
+    <footer>MiniReddit developed by example.com</footer>
 </div>
 </body>
 </html>
