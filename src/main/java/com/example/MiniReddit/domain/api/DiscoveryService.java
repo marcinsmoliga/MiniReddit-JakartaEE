@@ -17,12 +17,12 @@ public class DiscoveryService {
 	}
 
 	private static class DiscoveryMapper {
-		static DiscoveryBasicInfo map(Discovery d) {
+		static DiscoveryBasicInfo map(Discovery discovery) {
 			return new DiscoveryBasicInfo(
-					d.getTitle(),
-					d.getUrl(),
-					d.getDescription(),
-					d.getDateAdded()
+					discovery.getTitle(),
+					discovery.getUrl(),
+					discovery.getDescription(),
+					discovery.getDateAdded()
 			);
 		}
 	}
