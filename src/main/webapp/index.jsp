@@ -24,9 +24,9 @@
 
     <aside class="categories">
         <ul>
-            <li><a href="#">Entertainment</a></li>
-            <li><a href="#">Policy</a></li>
-            <li><a href="#">Business</a></li>
+            <c:forEach var="category" items="${requestScope.categories}">
+                <li><a href="${pageContext.request.contextPath.concat('/category?id=').concat(category.id)}">${category.name}</a></li>
+            </c:forEach>
         </ul>
     </aside>
 
