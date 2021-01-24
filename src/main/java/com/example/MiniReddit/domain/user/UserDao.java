@@ -29,7 +29,7 @@ public class UserDao extends BaseDao {
 			throw new RuntimeException(e);
 		}
 	}
-	}
+	
 
 	private void saveUser(User user) {
 		final String query = """
