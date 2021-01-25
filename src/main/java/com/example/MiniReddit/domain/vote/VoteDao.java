@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import com.example.MiniReddit.domain.common.BaseDao;
 
 public class VoteDao extends BaseDao {
-	
+
 	public void save(Vote vote) {
 		final String query = """
                 INSERT INTO
