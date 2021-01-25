@@ -14,12 +14,8 @@
            userCredCol="password"
            userRoleTable="user_role"
            roleNameCol="role_name">
-        <CredentialHandler className="org.apache.catalina.realm.NestedCredentialHandler">
-            <CredentialHandler
-                    className="org.apache.catalina.realm.MessageDigestCredentialHandler"
-                    algorithm="SHA-256" />
-            <CredentialHandler
-                    className="org.apache.catalina.realm.MessageDigestCredentialHandler"/>
-        </CredentialHandler>
+        <CredentialHandler
+                className="org.apache.catalina.realm.MessageDigestCredentialHandler"
+                algorithm="SHA-256" />
     </Realm>
 </Context>

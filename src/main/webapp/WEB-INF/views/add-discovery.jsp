@@ -1,26 +1,27 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add new discovery - MiniReddit</title>
+    <title>Add New Discovery - MiniReddit</title>
     <%@ include file="../segments/stylesheets.jspf" %>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/discovery-form.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/add-discovery-form.css">
 </head>
 <body>
 <div class="container">
     <%@ include file="../segments/header.jspf" %>
 
-    <form action="#" method="post" class="discovery-form">
+    <form action="${pageContext.request.contextPath}/discovery/add" method="post" class="discovery-form">
         <h2 class="discovery-form-title">Add new discovery</h2>
         <input name="title" placeholder="title" required>
         <input name="url" placeholder="url" type="url" required>
-        <select>
-            <option>Business</option>
-            <option>Entertainment</option>
-            <option>Politics</option>
+        <select name="categoryId">
+            <c:forEach var="category" items="${requestScope.categories}">
+                <option value="${category.id}">${category.name}</option>
+            </c:forEach>
         </select>
-        <textarea name="description" placeholder="Description"></textarea>
+        <textarea name="description" placeholder="description"></textarea>
         <button class="discovery-form-button">Add</button>
     </form>
 
