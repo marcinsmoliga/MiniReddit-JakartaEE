@@ -1,0 +1,39 @@
+/* Frame, margins, centering and maximum width */
+.discovery-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #BDBDBD;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+/* Font size and margins between inputs */
+.discovery-form > * {
+    font-size: 1rem;
+    margin: 16px;
+}
+
+/* Text area font and height shift setting */
+.discovery-form > textarea {
+    font: 300 1rem 'Roboto', sans-serif;
+    height: 5rem;
+    resize: vertical;
+}
+
+/* Form elements border */
+.discovery-form > *:not(.discovery-form-title) {
+    padding: 20px;
+    border: 1px solid #BDBDBD;
+}
+
+/* Center the form title */
+.discovery-form-title {
+    margin: 16px auto;
+}
+
+/* Button color change */
+.discovery-form-button {
+    color: white;
+    background-color: #007AFF;
+}
