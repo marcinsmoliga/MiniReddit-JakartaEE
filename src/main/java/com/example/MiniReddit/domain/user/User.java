@@ -9,6 +9,11 @@ public class User {
 	private String password;
 	private LocalDateTime registrationDate;
 
+	public User(Integer id, String username, String email, String password, LocalDateTime registrationDate) {
+		this(username, email, password, registrationDate);
+		this.id = id;
+	}
+
 	public User(String username, String email, String password, LocalDateTime registrationDate) {
 		this.username = username;
 		this.email = email;
@@ -32,15 +37,15 @@ public class User {
 		return password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public LocalDateTime getRegistrationDate() {
 		return registrationDate;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }
