@@ -4,5 +4,12 @@
         <i class="fas fa-share-alt-square"></i>
         MiniReddit
     </a>
-    <a href="#" class="login-button">SignIn</a>
+    <c:choose>
+        <c:when test="${empty pageContext.request.userPrincipal}">
+            <a href="${pageContext.request.contextPath}/login" class="login-button">SignIn</a>
+        </c:when>
+        <c:when test="${not empty pageContext.request.userPrincipal}">
+            <a href="${pageContext.request.contextPath}/logout" class="login-button">SignOut</a>
+        </c:when>
+    </c:choose>
 </nav>
