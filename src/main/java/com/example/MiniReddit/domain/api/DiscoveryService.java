@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import com.example.MiniReddit.domain.discovery.Discovery;
 import com.example.MiniReddit.domain.discovery.DiscoveryDao;
 import com.example.MiniReddit.domain.user.UserDao;
+import com.example.MiniReddit.domain.vote.VoteDao;
 
 public class DiscoveryService {
 	private final DiscoveryDao discoveryDao = new DiscoveryDao();
@@ -31,6 +32,7 @@ public class DiscoveryService {
 
 	private static class DiscoveryMapper {
 		private final UserDao userDao = new UserDao();
+		private final VoteDao voteDao = new VoteDao(); //dodane
 
 		DiscoveryBasicInfo map(Discovery d) {
 			return new DiscoveryBasicInfo(
@@ -38,8 +40,8 @@ public class DiscoveryService {
 					d.getTitle(),
 					d.getUrl(),
 					d.getDescription(),
-					d.getDateAdded()
-			);
+					d.getDateAdded(),
+					voteDao.countByDiscoveryId(d.getId())); //dodane
 		}
 
 		Discovery map(DiscoverySaveRequest ds) {
