@@ -10,10 +10,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/login")
-@ServletSecurity(
-		httpMethodConstraints = {
-				@HttpMethodConstraint(value = "GET", rolesAllowed = "USER")
-		}
+@ServletSecurity(httpMethodConstraints = {
+		@HttpMethodConstraint(value = "GET", rolesAllowed = "USER")
+}
 )
 public class LoginController extends HttpServlet {
 	@Override
